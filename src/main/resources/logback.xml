@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOGS" value="./logs"/>
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
+
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                [%d{HH:mm:ss.SSS}] [%highlight(%level)] [%thread] %msg\n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="Console"/>
+    </root>
+
+    <logger name="io.netty" level="warn"/>
+    <logger name="okhttp3" level="info"/>
+    <logger name="io.vertx" level="info"/>
+    <logger name="com.mewna.catnip" level="debug"/>
+</configuration>
